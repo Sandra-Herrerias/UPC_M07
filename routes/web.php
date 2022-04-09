@@ -22,6 +22,9 @@ Route::get('/aboutgame', function () {
 Route::get('/aboutus', function () {
     return view('aboutus');
 });
+Route::get('/admin_comments', function () {
+    return view('admin_comments');
+});
 Route::get('/comments_feedback', function () {
     return view('comments_feedback');
 });
