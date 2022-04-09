@@ -3,7 +3,7 @@
 @include('partials.navbar')
 @section('title','aboutgame')
 
-@section('content');
+@section('content')
 <h1>About Game</h1>
 @endsection
 

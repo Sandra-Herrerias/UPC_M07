@@ -19,7 +19,7 @@ integrity="sha384-xymdQtn1n3lH2wcu0qhcdaOpQwyoarkgLVxC/wZ5q7h9gHtxICrpcaSUfygqZG
 <!-- Styles 
 <link rel="stylesheet" href="{{ asset('css/navbar.css') }}">-->
 
-<nav id="navBarStyle" class="navbar navbar-expand-lg navbar-light bg-white  fixed-top">
+<nav id="navBarStyle" class="navbar navbar-expand-lg navbar-light bg-white  sticky">
     <a id="titles" class="navbar-brand navTitle" href="/">
         <img src="https://i.ibb.co/T4SZmfG/pngegg.png" width="40" height="40" class="d-inline-block align-top"
             alt="logo">
@@ -32,22 +32,22 @@ integrity="sha384-xymdQtn1n3lH2wcu0qhcdaOpQwyoarkgLVxC/wZ5q7h9gHtxICrpcaSUfygqZG
                         class="sr-only"></span></a>
             </li>
             <li class="nav-item">
-                <a id="titles" class="nav-link " href="{{ url('/aboutgame') }}">Game</a>
+                <a id="titles" class="nav-link " href="{{ url('/aboutgame') }}">Juego</a>
             </li>
             <li class="nav-item">
-                <a id="titles" class="nav-link" href="{{ url('/aboutus') }}">About us</a>
+                <a id="titles" class="nav-link" href="{{ url('/aboutus') }}">Sobre nosotros</a>
             </li>
             <li class="nav-item">
                 <a id="titles" class="nav-link" href="{{ url('/ranking_results') }}">Ranking</a>
             </li>
             <li class="nav-item">
-                <a id="titles" class="nav-link" href="{{ url('/comments_feedback') }}">Comments</a>
+                <a id="titles" class="nav-link" href="{{ url('/comments_feedback') }}">Comentarios</a>
             </li>
             <li class="nav-item">
-                <a id="titles" class="nav-link" href="{{ url('/technologies') }}">Technologies</a>
+                <a id="titles" class="nav-link" href="{{ url('/technologies') }}">Tecnologias</a>
             </li>
             <li class="nav-item">
-                <a id="titles" class="nav-link" href="{{ url('/download') }}">Download</a>
+                <a id="titles" class="nav-link" href="{{ url('/download') }}">Descargar</a>
             </li>
 
             <li class="nav-item">
