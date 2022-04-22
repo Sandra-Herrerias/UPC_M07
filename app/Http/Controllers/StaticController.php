@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 class StaticController extends Controller
 {
+
     public function aboutgame()
     {
         return view('aboutgame');
@@ -25,4 +26,5 @@ class StaticController extends Controller
     {
         return view('technologies');
     }
+
 }

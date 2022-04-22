@@ -6,7 +6,6 @@ use Illuminate\Http\Request;
 
 class CommentController extends Controller
 {
-  
     public function admin_comments()
     {
         return view('admin_comments');

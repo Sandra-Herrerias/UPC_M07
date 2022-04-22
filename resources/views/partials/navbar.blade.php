@@ -24,6 +24,7 @@
   <!-- Styles
 <link rel="stylesheet" href="{{ asset('css/navbar.css') }}">-->
 
+<<<<<<< HEAD
   <nav id="navBarStyle" class="navbar navbar-expand-lg navbar-light bg-white  sticky">
       <a id="titles" class="navbar-brand navTitle" href="/home">
           <img src="https://i.ibb.co/T4SZmfG/pngegg.png" width="40" height="40" class="d-inline-block align-top"
@@ -54,7 +55,6 @@
               <li class="nav-item">
                   <a id="titles" class="nav-link" href="{{ url('/download') }}">Descargar</a>
               </li>
-
               <li class="nav-item">
                   <a id="titles" class="nav-link" href="#">Login</a>
               </li>
