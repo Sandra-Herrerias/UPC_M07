@@ -24,7 +24,6 @@
   <!-- Styles
 <link rel="stylesheet" href="{{ asset('css/navbar.css') }}">-->
 
-<<<<<<< HEAD
   <nav id="navBarStyle" class="navbar navbar-expand-lg navbar-light bg-white  sticky">
       <a id="titles" class="navbar-brand navTitle" href="/home">
           <img src="https://i.ibb.co/T4SZmfG/pngegg.png" width="40" height="40" class="d-inline-block align-top"
