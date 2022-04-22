@@ -25,6 +25,7 @@ integrity="sha384-xymdQtn1n3lH2wcu0qhcdaOpQwyoarkgLVxC/wZ5q7h9gHtxICrpcaSUfygqZG
             alt="logo">
         Exploding Kittens
     </a>
+    <button type="button" id="toggler-icon" class="fa fa-bars " data-toggle="collapse" data-target="#navbarNavDropdown">
     <div class="collapse navbar-collapse justify-content-center" id="navbarNavDropdown">
         <ul id="barNavegador" class="navbar-nav">
             <li class="nav-item active">
