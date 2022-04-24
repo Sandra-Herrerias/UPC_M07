@@ -31,9 +31,19 @@ Route::controller(CommentController::class)->group(function(){
 
 Route::controller(RankingController::class)->group(function(){
     Route::get('ranking_results', 'ranking_results')->name('ranking_results');
-    
 });
 
 //Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+
+Route::get('/', function () {
+    return view('welcome');
+});
+
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth'])->name('dashboard');
+
+require __DIR__.'/auth.php';
