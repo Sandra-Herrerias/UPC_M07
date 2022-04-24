@@ -54,10 +54,6 @@
               <li class="nav-item">
                   <a id="titles" class="nav-link" href="{{ url('/download') }}">Descargar</a>
               </li>
-              <li class="nav-item">
-                  <a id="titles" class="nav-link" href="#">Login</a>
-              </li>
-
           </ul>
       </div>
       </div>
