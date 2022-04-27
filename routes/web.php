@@ -1,7 +1,5 @@
 <?php
-use App\Http\Controllers\CommentController;
-use App\Http\Controllers\RankingController;
-use App\Http\Controllers\StaticController;
+
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,28 +12,6 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-Route::get('home', [HomeController::class, 'index']);
-
-Route::controller(StaticController::class)->group(function(){
-    Route::get('aboutgame', 'aboutgame')->name('aboutgame');
-    Route::get('aboutus', 'aboutus')->name('aboutus');
-    Route::get('download', 'download')->name('download');
-    Route::get('technologies', 'technologies')->name('technologies');
-});
-
-Route::controller(CommentController::class)->group(function(){
-    Route::get('admin_comments', 'admin_comments')->name('admin_comments');
-    Route::get('comments_feedback', 'comments_feedback')->middleware(['auth'])->name('comments_feedback');
-});
-
-Route::controller(RankingController::class)->group(function(){
-    Route::get('ranking_results', 'ranking_results')->name('ranking_results');
-});
-
-//Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::get('/', function () {
     return view('welcome');

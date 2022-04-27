@@ -13,11 +13,11 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('jugadores', function (Blueprint $table) {
+        Schema::create('players', function (Blueprint $table) {
             $table->id('id');
             $table->string('email');
             $table->string('contrasena');
-            $table->enum('rol', ['admin','jugador']);
+            $table->enum('rol', ['admin','player']);
             $table->timestamps();
         });
     }

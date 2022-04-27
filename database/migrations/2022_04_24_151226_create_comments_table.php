@@ -13,11 +13,11 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('comentarios', function (Blueprint $table) {
+        Schema::create('comments', function (Blueprint $table) {
             $table->id('id');
-            $table->index('id_jugador');
+            $table->index('id_player');
             $table->text('comentario');
-            $table->foreignId('id_jugador')->references('id')->on('jugadores');
+            $table->foreignId('id_player')->references('id')->on('players');
             $table->timestamps();
         });
     }
