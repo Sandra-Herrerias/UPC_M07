@@ -13,13 +13,11 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('participacion', function (Blueprint $table) {
-            $table->index('idP');
-            $table->index('idJ');
-            $table->foreignId('idP')->references('id')->on('partidas');
-            $table->foreignId('idJ')->references('id')->on('players');
-            $table->primary(['idP', 'idJ']);
-            $table->integer('posicion');
+        Schema::create('games', function (Blueprint $table) {
+            $table->id('id');
+            $table->dateTime('initial_date');
+            $table->dateTime('final_date');
+            $table->time('duration')->virtualAs('timediff(`final_date`,`initial_date`)');
             $table->timestamps();
         });
     }
@@ -31,6 +29,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('participacion');
+        Schema::dropIfExists('games');
     }
 };

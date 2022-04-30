@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('comments', function (Blueprint $table) {
             $table->id('id');
             $table->index('id_player');
-            $table->text('comentario');
+            $table->text('comment');
             $table->foreignId('id_player')->references('id')->on('players');
             $table->timestamps();
         });
@@ -29,6 +29,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('comentarios');
+        Schema::dropIfExists('comments');
     }
 };

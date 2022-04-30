@@ -16,8 +16,8 @@ return new class extends Migration
         Schema::create('players', function (Blueprint $table) {
             $table->id('id');
             $table->string('email');
-            $table->string('contrasena');
-            $table->enum('rol', ['admin','player']);
+            $table->string('password');
+            $table->enum('role', ['admin','player']);
             $table->timestamps();
         });
     }
@@ -29,6 +29,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('jugadores');
+        Schema::dropIfExists('players');
     }
 };
