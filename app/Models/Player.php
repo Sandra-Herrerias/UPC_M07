@@ -19,6 +19,8 @@ class Player extends Model
         'password',
     ];
 
-    // public function 
+    public function comments(){
+        return $this->belongsToMany('App\Models\Comment');
+    }
 
 }

@@ -18,8 +18,11 @@ class PlayerFactory extends Factory
     {
         return [
             'email' => $this->faker->unique()->email(),
-            'contrasena' =>  $this->faker->password(),
-            'rol' =>  $this->faker->randomElement(['admin', 'player'])
+            'password' =>  $this->faker->password(),
+            'role' =>  $this->faker->randomElement(['admin', 'player'])
         ];
+        
     }
+
+   
 }

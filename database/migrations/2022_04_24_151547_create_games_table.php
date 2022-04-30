@@ -17,7 +17,8 @@ return new class extends Migration
             $table->id('id');
             $table->dateTime('initial_date');
             $table->dateTime('final_date');
-            $table->time('duration')->virtualAs('timediff(`final_date`,`initial_date`)');
+            // $table->time('duration')->virtualAs('timediff(`final_date`,`initial_date`)');
+            $table->integer('duration');
             $table->timestamps();
         });
     }

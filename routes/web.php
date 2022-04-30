@@ -1,6 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\StaticController;
+use App\Http\Controllers\RankingController;
+use App\Http\Controllers\CommentController;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,9 +30,9 @@ use Illuminate\Support\Facades\Route;
 
 // Route::get('home', [HomeController::class, 'index']);
 
-// Route::get('/', function () {
-//     return view('aboutgame');
-// });
+Route::get('/', function () {
+    return view('home');
+});
 
 
 
