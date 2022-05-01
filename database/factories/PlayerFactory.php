@@ -17,6 +17,7 @@ class PlayerFactory extends Factory
     public function definition()
     {
         return [
+            'nickname'=> $this->faker->unique()->name,
             'email' => $this->faker->unique()->email(),
             'password' =>  $this->faker->password(),
             'role' =>  $this->faker->randomElement(['admin', 'player'])

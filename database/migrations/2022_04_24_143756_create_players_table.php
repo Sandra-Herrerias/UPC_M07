@@ -15,6 +15,7 @@ return new class extends Migration
     {
         Schema::create('players', function (Blueprint $table) {
             $table->id('id');
+            $table->string('nickname');
             $table->string('email');
             $table->string('password');
             $table->enum('role', ['admin','player']);
