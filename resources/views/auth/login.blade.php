@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<!-- <div class="container">
+<div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
@@ -69,9 +69,9 @@
             </div>
         </div>
     </div>
-</div> -->
+</div>
 
-<div class="row m-0 vh-100">
+<!-- <div class="row m-0 vh-100">
     <div class="col p-0 bg-light d-flex justify-content-center align-items-center flex-column w-100">
         <form method="POST" action="{{ route('login') }}" class="w-75">
             <p class="align-self-start">¡Bienvenido de nuevo!
@@ -112,6 +112,6 @@
                     class="text-white text-decoration-none">¡Regístrate ahora!</a> </button>
         </div>
     </div>
-</div>
+</div> -->
 
 @endsection

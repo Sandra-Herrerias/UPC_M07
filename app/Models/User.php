@@ -42,7 +42,7 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    public function comments(){
-        return $this->belongsToMany('App\Models\Comment');
-    }
+    // public function comments(){
+    //     return $this->belongsToMany('App\Models\Comment');
+    // }
 }

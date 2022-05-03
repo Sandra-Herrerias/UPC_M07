@@ -17,6 +17,11 @@ Route::get('/', function () {
     return view('index');
 });
 
+
+Route::get('/home', function () {
+    return view('index');
+});
+
 Route::controller(App\Http\Controllers\HomeController::class)->group(function(){
     Route::get('index', 'index')->name('index');
     Route::get('aboutgame', 'aboutgame')->name('aboutgame');
