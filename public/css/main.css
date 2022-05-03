@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Bebas Neue', cursive;
+}
+
+@font-face {
+    font-family: proximaNova !important;
+    src: url(../assets/fonts/FontsFree-Net-proxima_nova_reg-webfont.ttf) format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    font-family: proximaNova, arial, helvetica, sans-serif;
+    background-color: #590B0B;
+}
+
+
+.image_box {
+    perspective: 1000px;
+}
+
+.scroll {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    z-index: 2;
+    display: inline-block;
+    -webkit-transform: translate(0, -50%);
+    transform: translate(0, -50%);
+    color: #fff;
+
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    text-align: center;
+
+    transition: opacity .3s;
+}
+
+.scroll {
+    animation: scroll .50s ease-in alternate infinite;
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateY(0);
+    }
+
+    100% {
+        transform: translateY(10px);
+    }
+}
+
+.scroll:hover {
+    opacity: .5;
+}
+
+.windows {
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    text-align: center;
+    bottom: 100px;
+    transition: opacity .3s;
+}
+
+
+/* Sobre nosotros */
+
+.carta-box {
+    width: 256px;
+    height: 576px;
+    position: relative;
+    perspective: 1000px;
+  }
+  
+  .carta-box:hover .carta {
+      transform: rotateY(180deg);
+  }
+  
+  .carta {
+    transform-style: preserve-3d;
+    transition: all 0.5s linear;
+  }
+  
+  .cara {
+    position: absolute;
+    backface-visibility: hidden;
+  }
+  
+  .cara.detras {
+    transform: rotateY(180deg);
+  }
+
+
+/* Sobre nosotros */
+
+.cat {
+  animation: scroll .50s ease-in alternate infinite;
+}

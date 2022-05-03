@@ -1,8 +1,4 @@
-@extends('layouts.layout')
-
-@include('partials.navbar')
-@section('title','aboutgame')
-
+@extends('layouts.app')
 @section('content')
-<h1>Admin comments</h1>
+ <h1>admin comments</h1>
 @endsection
