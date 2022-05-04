@@ -3,7 +3,7 @@
 namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
-use App\Models\Player;
+use App\Models\User;
 use App\Models\Game;
 /**
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Participation>
@@ -19,7 +19,7 @@ class ParticipationFactory extends Factory
     {
         return [
             'idP' => Game::inRandomOrder()->first()->id,
-            'idJ' => Player::inRandomOrder()->first()->id,
+            'idJ' => User::inRandomOrder()->first()->id,
             'position' => $this->faker->numberBetween(1,4)
         ];
     }

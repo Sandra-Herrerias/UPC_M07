@@ -10,7 +10,7 @@ class Comment extends Model
     use HasFactory;
 
     public function players(){
-        return $this->belongsTo('App\Models\Player');
+        return $this->belongsTo('App\Models\User');
     }
 
 }

@@ -17,7 +17,7 @@ return new class extends Migration
             $table->index('idP');
             $table->index('idJ');
             $table->foreignId('idP')->references('id')->on('games');
-            $table->foreignId('idJ')->references('id')->on('players');
+            $table->foreignId('idJ')->references('id')->on('users');
             $table->primary(['idP', 'idJ']);
             $table->integer('position');
             $table->timestamps();

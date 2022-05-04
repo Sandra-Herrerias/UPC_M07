@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->index('id_player');
             $table->text('comment');
-            $table->foreignId('id_player')->references('id')->on('players');
+            $table->foreignId('id_player')->references('id')->on('users');
             $table->timestamps();
         });
     }
