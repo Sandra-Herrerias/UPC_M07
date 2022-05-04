@@ -10,4 +10,10 @@ class RankingController extends Controller
     {
         return view('ranking');
     }
+
+    public function show(){
+        //agafa dades del model de player
+        //agafa dades del model de participation
+        //fa el join per treure la taula ranking
+    }
 }
