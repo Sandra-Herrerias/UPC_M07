@@ -37,7 +37,7 @@ Route::controller(App\Http\Controllers\CommentController::class)->group(function
 });
 
 Route::controller(App\Http\Controllers\RankingController::class)->group(function () {
-    Route::get('ranking', 'ranking')->name('ranking');
+    Route::get('ranking', 'show')->name('ranking');
 });
 
 Route::get('/logout', '\App\Http\Controllers\Auth\LoginController@logout');
