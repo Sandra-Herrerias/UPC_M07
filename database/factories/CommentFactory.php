@@ -3,7 +3,7 @@
 namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
-use App\Models\Player;
+use App\Models\User;
 /**
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Comment>
  */
@@ -18,7 +18,7 @@ class CommentFactory extends Factory
     {
         return [
             'comment' => $this->faker->realText(140),
-            'id_player' => Player::inRandomOrder()->first()->id,
+            'id_player' => User::inRandomOrder()->first()->id,
         ];
     }
 }
