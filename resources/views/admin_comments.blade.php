@@ -44,10 +44,13 @@
                         <th scope="row">{{ $comment->nickname }}</th>
                         <td>{{ $comment->email }}</td>
                         <td>{{ $comment->comment }}</td>
-                        <td></td>
-                        <td></td>
+                        <td><button class="btn btn-warning"><i
+                            class="bi bi-pencil-fill"></i></button></td>
+                        <td><button class="btn btn-danger"><i
+                            class="bi bi-trash-fill"></td>
                     </tr>
                 @endforeach
             </tbody>
         </table>
-        <div
+    </div>
+        @endsection
