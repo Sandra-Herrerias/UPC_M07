@@ -15,61 +15,20 @@
             <thead style="background-color: #c22222;">
                 <tr>
                     <th scope="col">Ranking</th>
+                    <th scope="col">Avatar</th>
                     <th scope="col">Jugador</th>
                     <th scope="col">Victorias</th>
                 </tr>
             </thead>
             <tbody>
+                @foreach ($ranking as $position)
                 <tr>
-                    <th scope="row">1</th>
-                    <td>Mark</td>
-                    <td>5</td>
+                    <th scope="row">{{ $loop->index+1 }}</th>
+                    <td>{{$position->avatar}}</td>
+                    <td>{{$position->nickname}}</td>
+                    <td>{{$position->victories}}</td>
                 </tr>
-                <tr>
-                    <th scope="row">2</th>
-                    <td>Mark</td>
-                    <td>5</td>
-                </tr>
-                <tr>
-                    <th scope="row">3</th>
-                    <td>Mark</td>
-                    <td>4</td>
-                </tr>
-                <tr>
-                    <th scope="row">4</th>
-                    <td>Mark</td>
-                    <td>3</td>
-                </tr>
-                <tr>
-                    <th scope="row">5</th>
-                    <td>Mark</td>
-                    <td>1</td>
-                </tr>
-                <tr>
-                    <th scope="row">6</th>
-                    <td>Mark</td>
-                    <td>1</td>
-                </tr>
-                <tr>
-                    <th scope="row">7</th>
-                    <td>Mark</td>
-                    <td>1</td>
-                </tr>
-                <tr>
-                    <th scope="row">8</th>
-                    <td>Mark</td>
-                    <td>0</td>
-                </tr>
-                <tr>
-                    <th scope="row">9</th>
-                    <td>Mark</td>
-                    <td>0</td>
-                </tr>
-                <tr>
-                    <th scope="row">10</th>
-                    <td>Mark</td>
-                    <td>0</td>
-                </tr>
+                @endforeach
             </tbody>
         </table>
 

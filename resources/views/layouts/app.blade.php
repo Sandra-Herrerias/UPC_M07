@@ -111,7 +111,7 @@
         <div class=" d-flex flex-column">
             <img class="mx-auto" src="img/nav-logo.png" width="140">
             <br>
-            <h4 *ngIf="!loggedIn" class="text-center">¿Estás listo?</h4>
+            <h4 *ngIf="!loggedIn" class="text-center">¿Estás lista?</h4>
             <br *ngIf="!loggedIn">
             <div *ngIf="!loggedIn" class="mx-auto">
                 <button type="button" class="btn btn-danger"><a class="text-white text-decoration-none"
