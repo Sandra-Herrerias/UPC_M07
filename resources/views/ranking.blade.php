@@ -9,7 +9,7 @@
         </div>
     </div>
 
-    <div class="container-flex p-5">
+    <div class="container p-5">
         <h2 class="text-center display-2 text-white">¡Jugadores con más partidas ganadas!</h2>
         <table class="table table-hover table-borderless table-striped" style="background-color: #F28627;">
             <thead style="background-color: #c22222;">
@@ -23,8 +23,9 @@
             <tbody>
                 @foreach ($ranking as $position)
                 <tr>
-                    <th scope="row">{{ $loop->index+1 }}</th>
-                    <td>{{$position->avatar}}</td>
+                    <th scope="row">{{ ($ranking->currentPage() -1 ) *  $ranking->perPage() + $loop->index + 1}}</th>
+                    <td class="w-25"> <img src="{{$position->avatar}}"
+                        class="rounded-circle"  width="75" height="75"></td>
                     <td>{{$position->nickname}}</td>
                     <td>{{$position->victories}}</td>
                 </tr>
@@ -32,23 +33,12 @@
             </tbody>
         </table>
 
-        <nav aria-label="Page navigation example">
-            <ul class="pagination">
-                <li class="page-item">
-                    <a class="page-link" href="#" aria-label="Previous">
-                        <span aria-hidden="true">&laquo;</span>
-                    </a>
-                </li>
-                <li class="page-item"><a class="page-link" href="#">1</a></li>
-                <li class="page-item"><a class="page-link" href="#">2</a></li>
-                <li class="page-item"><a class="page-link" href="#">3</a></li>
-                <li class="page-item">
-                    <a class="page-link" href="#" aria-label="Next">
-                        <span aria-hidden="true">&raquo;</span>
-                    </a>
-                </li>
-            </ul>
-        </nav>
+            <div class="col-sm-12 d-flex justify-content-end">
+            {{$ranking->links()}}
+            </div>
+
+      
+     
 
     </div>
     

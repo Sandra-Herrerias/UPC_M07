@@ -70,52 +70,6 @@
         </div>
     </div>
 </div> -->
-
-<!-- <div class="row m-0 vh-100">
-    <div class="col p-0 bg-light d-flex justify-content-center align-items-center flex-column w-100">
-        <form method="POST" action="{{ route('login') }}">
-                        @csrf
-                        <p class="align-self-start">¡Bienvenido de nuevo!
-                        </p>
-                        <h1 class="align-self-start">Ingrese a su cuenta
-                        </h1>
-                        <br>
-                        <div class="row mb-3">
-                            <label  class="form-label">{{ __('Correo electrónico') }}</label>
-                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
-                                @error('email')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                        </div>
-                        <div class="row mb-3">
-                            <label for="password" class="form-label">{{ __('Password') }}</label>
-
-                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
-
-                                @error('password')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                        </div>
-                        <button type="submit" class="btn btn-danger mt-3">
-                                    {{ __('Login') }}
-                                </button>
-                    </form>
-    </div>
-
-    <div class="col p-0 text-center d-flex justify-content-center align-items-center login">
-        <div class="text-white">
-            <h1 class="display-1">Todavía no tienes<br> cuenta? </h1>
-            <p>Lorem Ipsum is simply dummy industry. </p>
-            <button type="button" class="btn btn-dark"><a href="{{ route('register') }}"
-                    class="text-white text-decoration-none">¡Regístrate ahora!</a> </button>
-        </div>
-    </div>
-</div> -->
-
 <div class="row m-0 vh-100">
     <div class="col p-0 bg-light d-flex justify-content-center align-items-center flex-column w-100">
         <form method="POST" action="{{ route('login') }}" class="w-75">

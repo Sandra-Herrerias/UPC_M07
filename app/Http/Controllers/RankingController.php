@@ -16,7 +16,9 @@ class RankingController extends Controller
         ->where('participations.position', '=', 1)
         ->groupBy('id', 'nickname', 'avatar')
         ->orderBy('victories', 'desc')
-        ->get();
+        ->paginate(5);
+
+        
 
         return view('ranking', compact('ranking'));
     }

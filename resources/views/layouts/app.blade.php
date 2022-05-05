@@ -68,11 +68,11 @@
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('ranking') }}">{{ __('Ranking') }}</a>
                         </li>
-                        @if (Auth::user() && Auth::user()->role == 'player')
+
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('comments') }}">{{ __('Comentarios') }}</a>
                         </li>
-                        @endif
+
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('technologies') }}">{{ __('Tecnologias') }}</a>
                         </li>
