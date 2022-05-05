@@ -20,7 +20,7 @@ class ParticipationFactory extends Factory
         return [
             'idP' => Game::inRandomOrder()->first()->id,
             'idJ' => User::inRandomOrder()->first()->id,
-            'position' => $this->faker->numberBetween(1,4)
+            'position' => $this->faker->numberBetween(1,2)
         ];
     }
 }

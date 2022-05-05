@@ -68,16 +68,18 @@
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('ranking') }}">{{ __('Ranking') }}</a>
                         </li>
+                        @if (Auth::user() && Auth::user()->role == 'player')
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('comments') }}">{{ __('Comentarios') }}</a>
                         </li>
+                        @endif
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('technologies') }}">{{ __('Tecnologias') }}</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('download') }}">{{ __('Descarga') }}</a>
                         </li>
-                            @if (Route::has('login')) 
+                            @if (Auth::user() && Auth::user()->role == 'admin')
                             <li class="nav-item">
                             <a class="nav-link" href="{{ route('admin_comments') }}">{{ __('CRUD Comentarios') }}</a>
                         </li>
@@ -86,21 +88,20 @@
 
                     <form class="d-flex">
                     <!-- {{ Auth::user() }} -->
-                            @guest
-                            @if (Route::has('login'))
-                                            <a href="{{ route('login') }}"> <button type="button" class="btn btn-danger">
-                            Inciar sesión</button></a>
-    @endif
-    @else
-    <a href="{{ route('logout') }}"> <button type="button" class="btn btn-danger">
+                            @if (Auth::user())
+                            <a href="{{ route('logout') }}"> <button type="button" class="btn btn-danger">
                             Cerrar sesión</button></a>
-    @endguest
+    @else
+
+                            <a href="{{ route('login') }}"> <button type="button" class="btn btn-danger">
+                            Inciar sesión</button></a>
+                            @endif
                     </form>
                 </div>
             </div>
         </nav>
+    
         @endif
-
         <main>
             @yield('content')
         </main>
@@ -128,8 +129,11 @@
             <!-- <a class="nav-link active text-white" href="{{ route('admin_comments') }}">Comentarios</a> -->
             <a class="nav-link active text-white" href="{{ route('technologies') }}">Tecnologias</a>
             <a class="nav-link active text-white" href="{{ route('download') }}">Descargar</a>
-            @if (Route::has('login'))
+            @if (Auth::user())
+            <a class="nav-link active text-white" href="{{ route('logout') }}">Cerrar sesion</a>
+            @else
             <a class="nav-link active text-white" href="{{ route('login') }}">Iniciar sesion</a>
+
             @endif
         </div>
 
