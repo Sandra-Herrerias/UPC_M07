@@ -17,6 +17,10 @@ class CommentController extends Controller
 
     public function admin_comments()
     {
-        return view('admin_comments');
+        $admin_comments = Comment::join('users', 'users.id', '=', 'comments.id_player')
+               ->get(['users.nickname', 'users.email','users.avatar', 'comments.comment']);
+        return view('admin_comments', compact('admin_comments'));
     }
+
+
 }
