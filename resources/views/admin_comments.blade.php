@@ -56,30 +56,29 @@
                 @endforeach
             </tbody>
         </table>
-
-        <h2 class="text-center mt-5 pt-5">Añade tu comentario</h2>
-        <div class="container">
-            <form action="{{ route('admin_comments.store') }}" method="POST" class="row g-3">
-                <div class="col-12">
-                    <div class="form-floating">
-                        <!--sempre haurem de ficar aquesta directiva en els formularis de laravel
-                            per a que ens envii un token ocult-->
-                        @csrf
-                        <textarea type="text" name="comment" style="height: 100px" class="form-control" placeholder="Leave a comment here"
+        <div class="bg-white">
+            <h2 class="text-center mt-5 pt-5">Añade tu comentario</h2>
+            <div class="container">
+                <form action="{{ route('admin_comments.store') }}" method="POST" class="row g-3">
+                    <div class="col-12">
+                        <div class="form-floating">
+                            <!--sempre haurem de ficar aquesta directiva en els formularis de laravel
+                                per a que ens envii un token ocult-->
+                            @csrf
+                            <textarea type="text" name="comment" style="height: 100px" class="form-control" placeholder="Leave a comment here"
                                 value={{ old('comment', $comment->comment) }}></textarea>
-                                <label for="floatingTextarea2">Comments</label>
-                        @error('comment')
-                            <br>
-                            <small> *{{ $message }}</small>
-                        @enderror
+                            <label for="floatingTextarea2">Comments</label>
+                            @error('comment')
+                                <br>
+                                <small> *{{ $message }}</small>
+                            @enderror
+                        </div>
                     </div>
-                </div>
-                <div class="col-12 text-center mb-5">
-                    <button class="btn btn-danger mt-4" type="submit">Añadir</button>
-                </div>
-            </form>
+                    <div class="col-12 text-center mb-5">
+                        <button class="btn btn-danger mt-4" type="submit">Añadir</button>
+                    </div>
+                </form>
+            </div>
         </div>
-
-
     </div>
 @endsection

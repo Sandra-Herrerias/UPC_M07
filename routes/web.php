@@ -37,6 +37,7 @@ Route::controller(App\Http\Controllers\CommentController::class)->group(function
     Route::put('admin_comments/{comment}', 'update')->name('admin_comments.update');
     Route::post('admin_comments', 'store')->name('admin_comments.store');
     Route::get('comments', 'comments')->name('comments');
+    Route::post('comments', 'store')->name('comments.store');
 });
 
 Route::controller(App\Http\Controllers\RankingController::class)->group(function () {
