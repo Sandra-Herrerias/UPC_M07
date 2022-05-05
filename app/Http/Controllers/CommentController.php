@@ -43,6 +43,11 @@ class CommentController extends Controller
         $comment->comment = $request->comment;
         $comment->id_player=Auth::user()->id;
         $comment->save();
-        return redirect()->route('admin_comments', $comment);
+        if(Auth::user()->role == 'admin'){
+            return redirect()->route('admin_comments', $comment);
+        }else{
+            return redirect()->route('comments', $comment);
+        }
+        
     }
 }
