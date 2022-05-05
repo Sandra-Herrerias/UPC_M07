@@ -34,6 +34,8 @@ Route::controller(App\Http\Controllers\HomeController::class)->group(function(){
 Route::controller(App\Http\Controllers\CommentController::class)->group(function () {
     Route::get('admin_comments', 'admin_comments')->name('admin_comments');
     Route::delete('admin_comments/{comment}', 'destroy')->name('admin_comments.destroy');
+    Route::put('admin_comments/{comment}', 'update')->name('admin_comments.update');
+    Route::post('admin_comments', 'store')->name('admin_comments.store');
     Route::get('comments', 'comments')->name('comments');
 });
 

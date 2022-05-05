@@ -27,7 +27,7 @@
         </div>
     </div>
 
-    <div class="container-flex p-5">
+    <div class="container-flex p-5 ">
         <table class="table table-hover table-borderless table-striped" style="background-color: #F28627;">
             <thead style="background-color: #c22222;">
                 <tr>
@@ -46,15 +46,52 @@
                         <td>{{ $comment->comment }}</td>
                         <td><button class="btn btn-warning"><i class="bi bi-pencil-fill"></i></button></td>
                         <td>
-                                    <form action="{{ route('admin_comments.destroy', $comment->id) }}" method="POST">
-                                        @csrf
-                                        @method('delete')
-                                        <button type="submit" class="btn btn-danger"><i class="bi bi-trash-fill"></i></button>
-                                    </form>
+                            <form action="{{ route('admin_comments.destroy', $comment->id) }}" method="POST">
+                                @csrf
+                                @method('delete')
+                                <button type="submit" class="btn btn-danger"><i class="bi bi-trash-fill"></i></button>
+                            </form>
                         </td>
                     </tr>
                 @endforeach
             </tbody>
         </table>
+
+
+        <p>ID{{ $comment->id }}</p>
+        <br>
+        <p>COMMENT{{ $comment->comment }}</p>
+        <br>
+        <p>IDPLAYER{{ $comment->id_player }}</p>
+        <br>
+        <p>CREATED AT{{ $comment->created_at }}</p>
+        <br>
+        <p>UPDATED AT{{ $comment->updated_at }}</p>
+        <br>
+
+        <h2 class="text-center mt-5 pt-5">Añade tu comentario</h2>
+        <div class="container">
+            <form action="{{ route('admin_comments.store') }}" method="POST" class="row g-3">
+                <div class="col-12">
+                    <div class="form-floating">
+                        <!--sempre haurem de ficar aquesta directiva en els formularis de laravel
+                            per a que ens envii un token ocult-->
+                        @csrf
+                        <textarea type="text" name="comment" style="height: 100px" class="form-control" placeholder="Leave a comment here"
+                                value={{ old('comment', $comment->comment) }}></textarea>
+                                <label for="floatingTextarea2">Comments</label>
+                        @error('comment')
+                            <br>
+                            <small> *{{ $message }}</small>
+                        @enderror
+                    </div>
+                </div>
+                <div class="col-12 text-center mb-5">
+                    <button class="btn btn-danger mt-4" type="submit">Añadir</button>
+                </div>
+            </form>
+        </div>
+
+
     </div>
 @endsection
