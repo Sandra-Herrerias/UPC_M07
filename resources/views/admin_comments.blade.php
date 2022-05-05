@@ -27,7 +27,7 @@
         </div>
     </div>
 
-    <div class="container-flex p-5 ">
+    <div class="container p-5 ">
         <table class="table table-hover table-borderless table-striped" style="background-color: #F28627;">
             <thead style="background-color: #c22222;">
                 <tr>
@@ -56,10 +56,13 @@
                 @endforeach
             </tbody>
         </table>
+    </div>
 
-        <h2 class="text-center mt-5 pt-5">Añade tu comentario</h2>
+   
+    <div class=" bg-white ">
         <div class="container">
             <form action="{{ route('admin_comments.store') }}" method="POST" class="row g-3">
+            <h2 class="text-center">Añade tu comentario</h2>
                 <div class="col-12">
                     <div class="form-floating">
                         <!--sempre haurem de ficar aquesta directiva en els formularis de laravel
@@ -79,7 +82,5 @@
                 </div>
             </form>
         </div>
-
-
     </div>
 @endsection
