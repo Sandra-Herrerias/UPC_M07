@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StoreComment;
 use Illuminate\Http\Request;
 use App\Models\Comment;
+use Illuminate\Support\Facades\Auth;
 
 class CommentController extends Controller
 {
@@ -40,7 +41,7 @@ class CommentController extends Controller
         //$comment = Comment::create($request->all()->);
         $comment = new Comment;
         $comment->comment = $request->comment;
-        $comment->id_player=1;
+        $comment->id_player=Auth::user()->id;
         $comment->save();
         return redirect()->route('admin_comments', $comment);
     }

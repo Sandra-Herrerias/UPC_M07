@@ -57,18 +57,6 @@
             </tbody>
         </table>
 
-
-        <p>ID{{ $comment->id }}</p>
-        <br>
-        <p>COMMENT{{ $comment->comment }}</p>
-        <br>
-        <p>IDPLAYER{{ $comment->id_player }}</p>
-        <br>
-        <p>CREATED AT{{ $comment->created_at }}</p>
-        <br>
-        <p>UPDATED AT{{ $comment->updated_at }}</p>
-        <br>
-
         <h2 class="text-center mt-5 pt-5">Añade tu comentario</h2>
         <div class="container">
             <form action="{{ route('admin_comments.store') }}" method="POST" class="row g-3">

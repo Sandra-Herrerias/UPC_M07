@@ -13,7 +13,7 @@ class StoreComment extends FormRequest
      */
     public function authorize()
     {
-        return true;//TODO change to TRUE!!!
+        return true;
     }
 
     /**
