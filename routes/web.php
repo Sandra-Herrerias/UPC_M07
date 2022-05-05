@@ -33,6 +33,7 @@ Route::controller(App\Http\Controllers\HomeController::class)->group(function(){
 
 Route::controller(App\Http\Controllers\CommentController::class)->group(function () {
     Route::get('admin_comments', 'admin_comments')->name('admin_comments');
+    Route::delete('admin_comments/{comment}', 'destroy')->name('admin_comments.destroy');
     Route::get('comments', 'comments')->name('comments');
 });
 

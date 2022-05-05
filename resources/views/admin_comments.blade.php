@@ -44,13 +44,17 @@
                         <th scope="row">{{ $comment->nickname }}</th>
                         <td>{{ $comment->email }}</td>
                         <td>{{ $comment->comment }}</td>
-                        <td><button class="btn btn-warning"><i
-                            class="bi bi-pencil-fill"></i></button></td>
-                        <td><button class="btn btn-danger"><i
-                            class="bi bi-trash-fill"></td>
+                        <td><button class="btn btn-warning"><i class="bi bi-pencil-fill"></i></button></td>
+                        <td>
+                                    <form action="{{ route('admin_comments.destroy', $comment->id) }}" method="POST">
+                                        @csrf
+                                        @method('delete')
+                                        <button type="submit" class="btn btn-danger"><i class="bi bi-trash-fill"></i></button>
+                                    </form>
+                        </td>
                     </tr>
                 @endforeach
             </tbody>
         </table>
     </div>
-        @endsection
+@endsection

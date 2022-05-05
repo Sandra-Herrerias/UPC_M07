@@ -10,7 +10,7 @@
     </div>
 
     <div class="container-flex p-5">
-        <h2 class="text-center display-2 text-white">TABLA DE RANKING</h2>
+        <h2 class="text-center display-2 text-white">¡Jugadores con más partidas ganadas!</h2>
         <table class="table table-hover table-borderless table-striped" style="background-color: #F28627;">
             <thead style="background-color: #c22222;">
                 <tr>
