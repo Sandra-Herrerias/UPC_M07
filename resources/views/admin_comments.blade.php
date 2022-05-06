@@ -75,7 +75,7 @@
         {{$admin_comments->links()}}
     </div>
    
-    <div class=" bg-white ">
+    <div class="bg-white">
         <div class="container">
             <form action="{{ route('admin_comments.store') }}" method="POST" class="row g-3">
             <h2 class="text-center mt-5">Añade tu comentario</h2>
@@ -109,7 +109,7 @@
                 <div class="form-group">
                     <label for="idLabel" class="control-label">ID: {{$comment_selected->id}}<br>
                 </div>
-
+                @csrf
                 <div class="form-group">
                     <label for="colorLabel" class="control-label">Modificar comentario*</label><br>
                     <textarea class="form-control" type="text"
