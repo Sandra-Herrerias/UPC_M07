@@ -14,8 +14,8 @@ class CommentController extends Controller
         $comments = Comment::join('users', 'users.id', '=', 'comments.id_player')->limit(10)
             ->get(['users.nickname', 'users.avatar', 'comments.comment']);
 
-        return view('comments', compact('comments'));
-        // return  $comments;
+        // return view('comments', compact('comments'));
+        return  $comments;
     }
 
     public function admin_comments()
@@ -57,14 +57,15 @@ class CommentController extends Controller
         
     }
 
-    public function find_comment( $comment)  {
+    public function find_comment(Request $comment)  {
         $admin_comments = Comment::join('users', 'users.id', '=', 'comments.id_player')
         ->select('users.nickname', 'users.email',  'comments.id', 'comments.comment')
             ->paginate(11);
 
-        $comment_selected = Comment::find($comment);
+        $comment_selected = Comment::find($comment->id);
         
-        return view('admin_comments', compact('admin_comments', 'comment_selected'));
+        return $comment_selected;
+        // return view('admin_comments', compact('admin_comments', 'comment_selected'));
     }
 
 }
