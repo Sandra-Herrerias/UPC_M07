@@ -14,13 +14,13 @@ class UserController extends Controller
 
     public function login(Request $request){ 
         $user = User::where('email', $request->email)->first();
-        if(!$user || !Hash::check($request->password, $user->password)){
-            return response()->json(null);
-        }else{
-            $user=   Auth::loginUsingId($user->id);
-            return  Auth::user();
-        }
-
+        // if(!$user || !Hash::check($request->password, $user->password)){
+        //     return response()->json("no existe");
+        // }else{
+        //     $user=   Auth::loginUsingId($user->id);
+        //     return response()->json( "existe");
+        // }
+            return response()->json($user->id);
     }
     public function register(Request $request){ 
         // if(Auth::attempt(['email' => request('email'), 'password' => request('password')])){ 

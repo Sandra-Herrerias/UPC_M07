@@ -63,6 +63,15 @@ class CommentController extends Controller
         }
         
     }
+    
+
+    public function update(Request $request){
+
+        $comment = Comment::find($request->id);
+        $comment->comment = $request->comment;
+        $comment->save();
+        return  $comment;
+    }
 
     public function find_comment(Request $comment)  {
         $admin_comments = Comment::join('users', 'users.id', '=', 'comments.id_player')
@@ -71,8 +80,8 @@ class CommentController extends Controller
 
         $comment_selected = Comment::find($comment->id);
         
-        // return $comment_selected;
-        return view('admin_comments', compact('admin_comments', 'comment_selected'));
+        return $comment_selected;
+        // return view('admin_comments', compact('admin_comments', 'comment_selected'));
         // return view('admin_comments', compact( 'comment_selected'));
     }
 

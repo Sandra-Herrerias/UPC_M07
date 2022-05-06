@@ -28,12 +28,18 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 //     return view('index');
 // });
 
-// Route::controller(App\Http\Controllers\UserController::class)->group(function(){
+
+// Route::group(['middleware' => ['cors']], function () {
     Route::post('login', [UserController::class, 'login']);
     Route::post('register', [UserController::class, 'register']);
+// });
+
+// Route::controller(App\Http\Controllers\UserController::class)->group(function(){
+   
     // Route::get('cursos', [CursoController::class, 'index']);
 // });
 
+Route::put('update', [CommentController::class, 'update']);
 
 // Route::controller(App\Http\Controllers\HomeController::class)->group(function(){
 //     Route::get('index', 'index')->name('index');
@@ -46,11 +52,11 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 // Route::controller(App\Http\Controllers\CommentController::class)->group(function () {
 //     Route::get('admin_comments', 'admin_comments')->name('admin_comments'); //Sandra
 //     Route::post('admin_comments/{id}', 'find_comment')->name('admin_comments.find_comment'); //Sandra
-    // Route::delete('admin_comments/{id}', [CommentController::class, 'destroy']); //ALEX
-// //     Route::put('admin_comments/{comment}', 'update')->name('admin_comments.update'); //Sandra
-// //     Route::post('admin_comments', 'store')->name('admin_comments.store'); // JORDI
+//     Route::delete('admin_comments/{id}', [CommentController::class, 'destroy']); //ALEX
+//     Route::put('admin_comments', 'update')->name('admin_comments.update'); //Sandra
+//     Route::post('admin_comments', 'store')->name('admin_comments.store'); // JORDI
 //     Route::get('comments', 'comments')->name('comments'); // JORDIROCHA
-// //     Route::post('comments', 'store')->name('comments.store'); // JORDI
+//     Route::post('comments', 'store')->name('comments.store'); // JORDI
 // });
 
 
