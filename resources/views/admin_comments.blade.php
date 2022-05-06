@@ -47,11 +47,11 @@
                         <td>{{ $comment->email }}</td>
                         <td>{{ $comment->comment }}</td>
                         <td>
-                        <form action="{{ route('admin_comments.find_comment', $comment->id) }}" method="POST">
+                        <!-- <form action="{{ route('admin_comments.find_comment', $comment->id) }}" method="POST">
                                 @csrf
-                                @method('post')
+                                @method('post') -->
                                 <button class="btn btn-warning"><i class="bi bi-pencil-fill"></i></button>
-                            </form>
+                            <!-- </form> -->
                     
                          </td>
                         <td>
@@ -102,14 +102,15 @@
         <div class="bg-white ">
     
         @isset($comment_selected)
-    <div class="container">
-        <form #form1="ngForm" class="row g-3">
+    <!-- <div class="container">
+        <form action="#" method="POST" class="row g-3">
         <h2 class="text-center mt-5">Modificar comentario</h2>
             <div class="col-12">
                 <div class="form-group">
                     <label for="idLabel" class="control-label">ID: {{$comment_selected->id}}<br>
                 </div>
                 @csrf
+                @method('put')
                 <div class="form-group">
                     <label for="colorLabel" class="control-label">Modificar comentario*</label><br>
                     <textarea class="form-control" type="text"
@@ -120,12 +121,11 @@
             </div>
 
             <div class="col-12 text-center mb-5">
-                <button class="btn btn-warning" type="button" [disabled]="form1.invalid"
-                    (click)="emitInfoModifyComments()">Modificar</button>
+                <button class="btn btn-warning" type="submit" >Modificar</button>
             </div>
         </form>
     </div>
-    </div>
+    </div> -->
     @endif
    
 </div>

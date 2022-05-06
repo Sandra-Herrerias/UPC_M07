@@ -77,18 +77,18 @@
                             <a class="nav-link" href="{{ route('comments') }}">{{ __('Comentarios') }}</a>
                         </li>
                         @endif
-
+                        @if (Auth::user() && Auth::user()->role == 'admin')
+                            <li class="nav-item">
+                            <a class="nav-link" href="{{ route('admin_comments') }}">{{ __('CRUD Comentarios') }}</a>
+                        </li>
+                            @endif
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('technologies') }}">{{ __('Tecnologias') }}</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('download') }}">{{ __('Descarga') }}</a>
                         </li>
-                            @if (Auth::user() && Auth::user()->role == 'admin')
-                            <li class="nav-item">
-                            <a class="nav-link" href="{{ route('admin_comments') }}">{{ __('CRUD Comentarios') }}</a>
-                        </li>
-                            @endif
+                            
                     </ul>
 
                     <form class="d-flex">
@@ -130,8 +130,15 @@
             <a class="nav-link active text-white" href="{{ route('aboutgame') }}">Juego</a>
             <a class="nav-link active text-white" href="{{ route('aboutus') }}">Sobre nosotros</a>
             <a class="nav-link active text-white" href="{{ route('ranking') }}">Ranking</a>
-            <a class="nav-link active text-white" href="{{ route('comments') }}">Comentarios</a>
-            <!-- <a class="nav-link active text-white" href="{{ route('admin_comments') }}">Comentarios</a> -->
+
+            @if (!Auth::user() )
+                            <a class="nav-link active text-white" href="{{ route('comments') }}">{{ __('Comentarios') }}</a>
+                        @elseif (Auth::user() && Auth::user()->role == 'player')
+                            <a class="nav-link" href="{{ route('comments') }}">{{ __('Comentarios') }}</a>
+                        @endif
+                        @if (Auth::user() && Auth::user()->role == 'admin')
+                            <a class="nav-link active text-white" href="{{ route('admin_comments') }}">{{ __('CRUD Comentarios') }}</a>
+                            @endif
             <a class="nav-link active text-white" href="{{ route('technologies') }}">Tecnologias</a>
             <a class="nav-link active text-white" href="{{ route('download') }}">Descargar</a>
             @if (Auth::user())

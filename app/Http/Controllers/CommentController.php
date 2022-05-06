@@ -57,6 +57,10 @@ class CommentController extends Controller
         
     }
 
+    public function update(Comment $request){
+        // return view('admin_comments' ,compact('admin_comments'));
+    }
+
     public function find_comment(Request $comment)  {
         $admin_comments = Comment::join('users', 'users.id', '=', 'comments.id_player')
         ->select('users.nickname', 'users.email',  'comments.id', 'comments.comment')
