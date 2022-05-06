@@ -28,9 +28,9 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 // });
 
 // Route::controller(App\Http\Controllers\UserController::class)->group(function(){
-    Route::post('login', [UserController::class, 'login']);
-    // Route::get('details', [UserController::class, 'details']);
-    Route::post('register', [UserController::class, 'register']);
+    // Route::post('login', [UserController::class, 'login']);
+    // // Route::get('details', [UserController::class, 'details']);
+    // Route::post('register', [UserController::class, 'register']);
     // Route::get('cursos', [CursoController::class, 'index']);
 // });
 
@@ -43,15 +43,15 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 //     Route::get('technologies', 'technologies')->name('technologies');
 // });
 
-Route::controller(App\Http\Controllers\CommentController::class)->group(function () {
-    Route::get('admin_comments', 'admin_comments')->name('admin_comments'); //Sandra
-    Route::post('admin_comments/{id}', 'find_comment')->name('admin_comments.find_comment'); //Sandra
-//     Route::delete('admin_comments/{comment}', 'destroy')->name('admin_comments.destroy'); //ALEX
-//     Route::put('admin_comments/{comment}', 'update')->name('admin_comments.update'); //Sandra
-//     Route::post('admin_comments', 'store')->name('admin_comments.store'); // JORDI
-    Route::get('comments', 'comments')->name('comments'); // JORDIROCHA
-//     Route::post('comments', 'store')->name('comments.store'); // JORDI
-});
+// Route::controller(App\Http\Controllers\CommentController::class)->group(function () {
+//     Route::get('admin_comments', 'admin_comments')->name('admin_comments'); //Sandra
+//     Route::post('admin_comments/{id}', 'find_comment')->name('admin_comments.find_comment'); //Sandra
+// //     Route::delete('admin_comments/{comment}', 'destroy')->name('admin_comments.destroy'); //ALEX
+// //     Route::put('admin_comments/{comment}', 'update')->name('admin_comments.update'); //Sandra
+// //     Route::post('admin_comments', 'store')->name('admin_comments.store'); // JORDI
+//     Route::get('comments', 'comments')->name('comments'); // JORDIROCHA
+// //     Route::post('comments', 'store')->name('comments.store'); // JORDI
+// });
 
 
 // Route::controller(App\Http\Controllers\RankingController::class)->group(function () {
