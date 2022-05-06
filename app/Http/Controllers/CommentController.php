@@ -15,13 +15,18 @@ class CommentController extends Controller
             ->get(['users.nickname', 'users.avatar', 'comments.comment']);
 
         return view('comments', compact('comments'));
+        // return  $comments;
     }
 
     public function admin_comments()
     {
         $admin_comments = Comment::join('users', 'users.id', '=', 'comments.id_player')
-            ->get(['users.nickname', 'users.email', 'users.avatar', 'comments.id', 'comments.comment']);
+        ->select('users.nickname', 'users.email',  'comments.id', 'comments.comment')
+            ->paginate(11);
+            // ->get(['users.nickname', 'users.email', 'users.avatar', 'comments.id', 'comments.comment']);
+
         return view('admin_comments', compact('admin_comments'));
+        // return  $admin_comments;
     }
 
     public function destroy(Comment $comment)
@@ -41,6 +46,7 @@ class CommentController extends Controller
         //$comment = Comment::create($request->all()->);
         $comment = new Comment;
         $comment->comment = $request->comment;
+        // $comment->nickname = Auth::user()->nickname;
         $comment->id_player=Auth::user()->id;
         $comment->save();
         if(Auth::user()->role == 'admin'){
@@ -50,4 +56,15 @@ class CommentController extends Controller
         }
         
     }
+
+    public function find_comment( $comment)  {
+        $admin_comments = Comment::join('users', 'users.id', '=', 'comments.id_player')
+        ->select('users.nickname', 'users.email',  'comments.id', 'comments.comment')
+            ->paginate(11);
+
+        $comment_selected = Comment::find($comment);
+        
+        return view('admin_comments', compact('admin_comments', 'comment_selected'));
+    }
+
 }

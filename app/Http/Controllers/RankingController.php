@@ -21,5 +21,6 @@ class RankingController extends Controller
         
 
         return view('ranking', compact('ranking'));
+        // return $ranking;
     }
 }

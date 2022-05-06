@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
+<!-- <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
@@ -43,7 +43,8 @@
                             <label for="password" class="col-md-4 col-form-label text-md-end">{{ __('Password') }}</label>
 
                             <div class="col-md-6">
-                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
+                                <input id="password" type="password"
+                                 class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
 
                                 @error('password')
                                     <span class="invalid-feedback" role="alert">
@@ -73,5 +74,80 @@
             </div>
         </div>
     </div>
+</div> -->
+
+<div class="row m-0 vh-100">
+    <div class="col p-0 text-center d-flex justify-content-center align-items-center login">
+        <div class="text-white">
+            <h1 class="display-1">Ya tienes<br> una cuenta
+            </h1>
+            <p>Lorem Ipsum is simply dummy industry. </p>
+            <button type="button" class="btn btn-dark">
+                <a href="{{ route('login') }}" class="text-white text-decoration-none">¡Inicia sesión ahora!</a>
+            </button>
+        </div>
+    </div>
+    <div class="col p-0 bg-light d-flex justify-content-center align-items-center flex-column w-100">
+        <form class="w-75" method="POST" action="{{ route('register') }}">
+        @csrf
+            <p class="align-self-start">Hola kitten!</p>
+            <h1 class="align-self-start">Crear una cuenta
+            </h1>
+            <br>
+            <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">Nombre
+                </label>
+                <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
+                @error('name')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+            </div>
+            <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">Nickname
+                </label>
+                <input id="nickname" type="text" class="form-control @error('nickname') is-invalid @enderror" name="nickname" value="{{ old('nickname') }}" required autocomplete="name" autofocus>
+                @error('nickname')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+            
+            </div>
+            <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">Email
+                </label>
+                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
+                @error('email')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+            </div>
+            <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">Contraseña
+                </label>
+                <input id="password" type="password"
+                                 class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="password">
+                                 @error('password')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+            </div>
+            
+            <br>
+            <!-- <button type="button" class="btn btn-danger mt-3"
+                >Registrarse</button> -->
+
+                <button type="submit" class="btn btn-danger mt-2">
+                                    {{ __('Registrarse') }}
+                                </button>
+
+        </form>
+    </div>
 </div>
+
+
 @endsection
