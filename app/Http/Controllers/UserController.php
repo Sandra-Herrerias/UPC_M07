@@ -13,71 +13,58 @@ class UserController extends Controller
     public $successStatus = 200;
 
     public function login(Request $request){ 
-        $user = User::where('email', $request->email)->first();
-        // if(!$user || !Hash::check($request->password, $user->password)){
-        //     return response()->json("no existe");
-        // }else{
-        //     $user=   Auth::loginUsingId($user->id);
-        //     return response()->json( "existe");
-        // }
-            return response()->json($user->id);
+        $user = User::where('email', $request->_email)->first();
+        if(!$user || !Hash::check($request->_password, $user->password)){
+            return response()->json(['success' =>false ]);
+        }
+        else{
+            $user=   Auth::loginUsingId($user->id);
+            return response()->json(['success' =>true, 'user' => $user ]);
+        }
+
+        // return $user;
+
+            // return response()->json(['success' =>'ok', 'user' => $request ]);
     }
     public function register(Request $request){ 
-        // if(Auth::attempt(['email' => request('email'), 'password' => request('password')])){ 
-        //     // $user = Auth::user(); 
-        //     // $success['token'] =  $user->createToken('MyApp')-> accessToken; 
-        //     $user = User::where('email', request('email'));
-        //     return response()->json(['success' =>'Uthorised', 'user' => $user ], 200); 
-        // } 
-        //     return response()->json(['error'=>'Unauthorised'], 401); 
-        $user = User::where('email', $request->email)->first();
-            if (!$user) {
-                $validator = Validator::make($request->all(), [ 
-                    'name' => 'required', 
-                    'nickname' => 'required', 
-                    'email' => 'email|required', 
-                    'password' => 'required', 
-                ]);
-            if ($validator->fails()) { 
-                return response()->json(['success'=> false, 'error'=>$validator->errors()], 401);       
-            }else{
+
+        $user = User::where('email', $request->_email)->first();
+         if ($user) {
+            return response()->json([ 'success'=> false ]);
+         }else{
                 User::create([
-                    'name' => $request['name'],
-                    'nickname' => $request['nickname'],
-                    'email' => $request['email'],
-                    'password' => Hash::make($request['password']),
+                    'name' => $request->_nickname,
+                    'nickname' => $request->_nickname,
+                    'email' => $request->_email,
+                    'password' => Hash::make($request->_password),
                 ]);
                 return response()->json([ 'success'=> true ]);
-            }
-            }else{
-                return response()->json([ 'success'=> false ]);
-            }
+                    
+         }
+
+            // if (!$user) {
+            //         $validator = Validator::make($request->all(), [ 
+            //             '_name' => 'required', 
+            //             '_nickname' => 'required', 
+            //             '_email' => 'email|required', 
+            //             '_password' => 'required', 
+            //         ]);
+            //     if ($validator->fails()) { 
+            //         return response()->json(['success'=> false]);       
+            //     }else{
+            //         User::create([
+            //             'name' => $request->_nickname,
+            //             'nickname' => $request->_nickname,
+            //             'email' => $request->_email,
+            //             'password' => Hash::make($request->_password),
+            //         ]);
+            //         return response()->json([ 'success'=> true ]);
+            //     }
+            // }else{
+            //     return response()->json([ 'success'=> false ]);
+            // }
            
-
-    //     if (!$user) {
-            
-    //         $validator = Validator::make($request->all(), [ 
-    //             'name' => 'required', 
-    //             'nickname' => 'required', 
-    //             'email' => 'email', 
-    //             'password' => 'required', 
-    //         ]);
-    // if ($validator->fails()) { 
-    //             return response()->json(['error'=>$validator->errors()], 401);       
-    //         }else{
-    //             User::create([
-    //                 'name' => $request['name'],
-    //                 'nickname' => $request['nickname'],
-    //                 'email' => $request['email'],
-    //                 'password' => Hash::make($request['password']),
-    //             ]);
-    //             return response()->json([ 'success'=> true ]);
-    //         }
-            
-
-    //     }else{
-    //         return response()->json([ 'success'=> false ]);
-    //     }
-    }
+            }
+  
 
 }
