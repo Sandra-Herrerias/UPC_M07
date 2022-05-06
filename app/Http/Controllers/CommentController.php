@@ -13,9 +13,12 @@ class CommentController extends Controller
     {
         $comments = Comment::join('users', 'users.id', '=', 'comments.id_player')->limit(10)
             ->get(['users.nickname', 'users.avatar', 'comments.comment']);
-
-        return view('comments', compact('comments'));
-        // return  $comments;
+          
+            if ( $comments) {
+                return response()->json([ 'success'=> true, 'comments'=>$comments ]);
+            }
+        // return view('comments', compact('comments'));
+        return response()->json([ 'success'=> false]);
     }
 
     public function admin_comments()

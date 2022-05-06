@@ -5,6 +5,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\CommentController;
+use App\Http\Controllers\RankingController;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -39,7 +40,9 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     // Route::get('cursos', [CursoController::class, 'index']);
 // });
 
+Route::get('comments', [CommentController::class, 'comments']);
 Route::put('update', [CommentController::class, 'update']);
+Route::post('store', [CommentController::class, 'store']);
 
 // Route::controller(App\Http\Controllers\HomeController::class)->group(function(){
 //     Route::get('index', 'index')->name('index');
