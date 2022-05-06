@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 // use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\CommentController;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -28,9 +29,8 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 // });
 
 // Route::controller(App\Http\Controllers\UserController::class)->group(function(){
-    // Route::post('login', [UserController::class, 'login']);
-    // // Route::get('details', [UserController::class, 'details']);
-    // Route::post('register', [UserController::class, 'register']);
+    Route::post('login', [UserController::class, 'login']);
+    Route::post('register', [UserController::class, 'register']);
     // Route::get('cursos', [CursoController::class, 'index']);
 // });
 
@@ -46,7 +46,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 // Route::controller(App\Http\Controllers\CommentController::class)->group(function () {
 //     Route::get('admin_comments', 'admin_comments')->name('admin_comments'); //Sandra
 //     Route::post('admin_comments/{id}', 'find_comment')->name('admin_comments.find_comment'); //Sandra
-// //     Route::delete('admin_comments/{comment}', 'destroy')->name('admin_comments.destroy'); //ALEX
+    // Route::delete('admin_comments/{id}', [CommentController::class, 'destroy']); //ALEX
 // //     Route::put('admin_comments/{comment}', 'update')->name('admin_comments.update'); //Sandra
 // //     Route::post('admin_comments', 'store')->name('admin_comments.store'); // JORDI
 //     Route::get('comments', 'comments')->name('comments'); // JORDIROCHA

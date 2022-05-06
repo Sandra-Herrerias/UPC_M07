@@ -29,14 +29,21 @@ class CommentController extends Controller
         // return  $admin_comments;
     }
 
-    public function destroy(Comment $comment)
+    public function destroy($id)
     {
-        echo $comment;
-        $comment->delete();
-        //amb el id passat per parametre recupero el comentari sencer
-        //select * from comentaris whre id = $id
-        //$comment = Comment::destroy($id);
-        return redirect()->route('admin_comments');
+        // echo $comment;
+        // $comment->delete();
+        // //amb el id passat per parametre recupero el comentari sencer
+        // //select * from comentaris whre id = $id
+        // //$comment = Comment::destroy($id);
+        // return redirect()->route('admin_comments');
+        $comment2= Comment::find($id);
+
+        $comment2->delete();
+
+        return $comment2;
+        // Comment::destroy($comment);
+
     }
 
 
