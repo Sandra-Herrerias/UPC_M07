@@ -44,7 +44,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 // });
 
 Route::controller(App\Http\Controllers\CommentController::class)->group(function () {
-    Route::get('admin_comments', 'admin_comments')->name('admin_comments');
+    Route::get('admin_comments', 'admin_comments')->name('admin_comments'); //Sandra
     Route::post('admin_comments/{id}', 'find_comment')->name('admin_comments.find_comment'); //Sandra
 //     Route::delete('admin_comments/{comment}', 'destroy')->name('admin_comments.destroy'); //ALEX
 //     Route::put('admin_comments/{comment}', 'update')->name('admin_comments.update'); //Sandra
