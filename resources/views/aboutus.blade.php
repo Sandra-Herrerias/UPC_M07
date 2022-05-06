@@ -167,12 +167,10 @@
                 </div>
                 <div class="cara detras">
                   <div class="card">
-                      <img src="img/fotoIncognito.png" class="card-img-top" alt="...">
+                      <img src="img/Sandra.png" class="card-img-top" alt="...">
                       <div class="card-body">
                         <h5 class="card-title">Sandra Herrerias</h5>
-                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam egestas lectus 
-                            quis nunc fringilla, a bibendum quam ornare. Proin efficitur justo vitae elit feugiat, quis 
-                            aliquam purus tincidunt.</p>
+                        <p class="card-text">Estudiante DAW, INS Provençana.</p>
                         <a href="https://github.com/Sandra-Herrerias" target="_blank" class="bi bi-github"></a>
                         <a href="https://www.instagram.com/ines_masllorens/" target="_blank" class="bi bi-instagram"></a>
                       </div>
