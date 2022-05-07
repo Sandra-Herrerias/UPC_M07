@@ -42,6 +42,8 @@ class UserController extends Controller
                     
          }
 
+        
+
             // if (!$user) {
             //         $validator = Validator::make($request->all(), [ 
             //             '_name' => 'required', 
