@@ -5,9 +5,9 @@
         <div class="row">
             <div class="col-md-6 col-lg-5 ml-auto d-flex align-items-center mt-4 mt-md-0">
                 <div>
-                    <h1>Disponible ya en PC!</h1>
+                    <h1>¡Disponible ya en PC!</h1>
                     <br>
-                    <img src="img/windows.png" height="44" alt="" srcset="">
+                    <a href="https://github.com/marioRelajao/ProyectoGrupo6/releases/tag/v1" target="_blank"><img src="img/windows.png" height="60"></a>
                     <br>
                     <p class="margin-top-s text-muted mt-2">*Revisa los requisitios antes de descargar.</p>
                 </div>
@@ -91,7 +91,7 @@
                 <dt class="col-sm-3">Requisitos del produto</dt>
                 <dd class="col-sm-9">
                     <p>Conexión a internet.</p>
-                    <p>Para jugar debes estar registrado, clica <a href="{{ route('register') }}">aquí</a> para registrarte.</p>
+                    <p>Para jugar debes estar registrado, clica <a class="text-warning" href="{{ route('register') }}">aquí</a> para registrarte.</p>
                 </dd>
             </div>
         </div>

@@ -34,7 +34,7 @@ class CommentController extends Controller
 
     public function destroy(Comment $comment)
     {
-        echo $comment;
+        // echo $comment;
         $comment->delete();
         //amb el id passat per parametre recupero el comentari sencer
         //select * from comentaris whre id = $id

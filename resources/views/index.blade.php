@@ -3,14 +3,14 @@
 <div class="overflow-hidden vh-100 d-flex align-items-center justify-content-around"
     style="background-image: url('img/background-home.jpg'); background-repeat: no-repeat; background-size: cover; background-position: center center;">
 
-    <div  class="image_box align-self-start pt-5 cat">
+    <div  class="image_box align-self-start pt-5 cat d-none d-lg-block">
         <img  src="img/cat.png" class="img-fluid">
     </div>
     <div class="image_box">
         <img src="img/logo.png" height="300" class="img-fluid">
         
     </div>
-    <div  class="image_box align-self-end pb-5">
+    <div  class="image_box align-self-end pb-5 d-none d-lg-block">
         <img  src="img/cats.png" class="img-fluid">
        
     </div>

@@ -134,7 +134,7 @@
             @if (!Auth::user() )
                             <a class="nav-link active text-white" href="{{ route('comments') }}">{{ __('Comentarios') }}</a>
                         @elseif (Auth::user() && Auth::user()->role == 'player')
-                            <a class="nav-link" href="{{ route('comments') }}">{{ __('Comentarios') }}</a>
+                            <a class="nav-link active text-white" href="{{ route('comments') }}">{{ __('Comentarios') }}</a>
                         @endif
                         @if (Auth::user() && Auth::user()->role == 'admin')
                             <a class="nav-link active text-white" href="{{ route('admin_comments') }}">{{ __('CRUD Comentarios') }}</a>
