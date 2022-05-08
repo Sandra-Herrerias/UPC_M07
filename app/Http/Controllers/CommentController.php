@@ -6,6 +6,7 @@ use App\Http\Requests\StoreComment;
 use Illuminate\Http\Request;
 use App\Models\Comment;
 use Illuminate\Support\Facades\Auth;
+use Validator;
 
 class CommentController extends Controller
 {
@@ -13,79 +14,111 @@ class CommentController extends Controller
     {
         $comments = Comment::join('users', 'users.id', '=', 'comments.id_player')->limit(10)
             ->get(['users.nickname', 'users.avatar', 'comments.comment']);
-          
-            if ( $comments) {
-                return response()->json([ 'success'=> true, 'comments'=>$comments ]);
-            }
+
+        if ($comments) {
+            return response()->json(['success' => true, 'comments' => $comments]);
+        }
         // return view('comments', compact('comments'));
-        return response()->json([ 'success'=> false]);
+        return response()->json(['success' => false]);
     }
 
     public function admin_comments()
     {
         $admin_comments = Comment::join('users', 'users.id', '=', 'comments.id_player')
-        ->select('users.nickname', 'users.email',  'comments.id', 'comments.comment')
-            ->paginate(11);
-            // ->get(['users.nickname', 'users.email', 'users.avatar', 'comments.id', 'comments.comment']);
+            ->select('users.nickname', 'users.email',  'comments.id', 'comments.comment')
+            // ->paginate(11);
+            ->get();
 
-        return view('admin_comments', compact('admin_comments'));
+        if ($admin_comments) {
+            return response()->json(['success' => true, 'comments' => $admin_comments]);
+        }
+
+        return response()->json(['success' => false]);
+        // return view('admin_comments', compact('admin_comments'));
         // return  $admin_comments;
     }
 
-    public function destroy($id)
+    public function destroy(Request $request)
     {
-        // echo $comment;
         // $comment->delete();
         // //amb el id passat per parametre recupero el comentari sencer
         // //select * from comentaris whre id = $id
         // //$comment = Comment::destroy($id);
         // return redirect()->route('admin_comments');
-        $comment2= Comment::find($id);
 
-        $comment2->delete();
+        $comment = Comment::find($request->id);
 
-        return $comment2;
+        if ($comment) {
+            $comment->delete();
+            return response()->json(['success' => true]);
+        }
+
+        // return $comment;
+        return response()->json(['success' => false]);
+
         // Comment::destroy($comment);
 
     }
 
 
     //metode del controlador que em guarda
-    public function store(StoreComment $request)
+    public function store(Request $request)
     {
         //$comment = Comment::create($request->all()->);
         $comment = new Comment;
         $comment->comment = $request->comment;
-        // $comment->nickname = Auth::user()->nickname;
-        $comment->id_player=Auth::user()->id;
-        $comment->save();
-        if(Auth::user()->role == 'admin'){
-            return redirect()->route('admin_comments', $comment);
-        }else{
-            return redirect()->route('comments', $comment);
+        $comment->id_player = $request->id_player;
+        if ($comment->save()) {
+            return response()->json(['success' => true]);
         }
-        
+        // $comment->id_player=Auth::user()->id;
+        // $comment->save();
+        // if(Auth::user()->role == 'admin'){
+        //     return redirect()->route('admin_comments', $comment);
+        // }else{
+        //     return redirect()->route('comments', $comment);
+        // }
+
+        return response()->json(['success' => false]);
     }
-    
 
-    public function update(Request $request){
 
-        $comment = Comment::find($request->id);
-        $comment->comment = $request->comment;
-        $comment->save();
-        return  $comment;
+    public function update(Request $request)
+    {
+
+        $validator = Validator::make($request->all(), [
+            'id' => 'required',
+            'comment' => 'required|string',
+        ]);
+        if ($validator->fails()) {
+            return response()->json(['success' => false]);
+        } else {
+            $comment = Comment::find($request->id);
+            if ($comment) {
+                $comment->comment = $request->comment;
+                if ($comment->save()) {
+                    return response()->json(['success' => true]);
+                }
+            }
+        }
+        return response()->json(['success' => false]);
+
+        // $comment = Comment::find($request->id);
+        // $comment->comment = $request->comment;
+        // $comment->save();
+        // return   response()->json(['success' => true, 'comment' => $comment]);
     }
 
-    public function find_comment(Request $comment)  {
+    public function find_comment(Request $comment)
+    {
         $admin_comments = Comment::join('users', 'users.id', '=', 'comments.id_player')
-        ->select('users.nickname', 'users.email',  'comments.id', 'comments.comment')
+            ->select('users.nickname', 'users.email',  'comments.id', 'comments.comment')
             ->paginate(11);
 
         $comment_selected = Comment::find($comment->id);
-        
+
         return $comment_selected;
         // return view('admin_comments', compact('admin_comments', 'comment_selected'));
         // return view('admin_comments', compact( 'comment_selected'));
     }
-
 }

@@ -21,50 +21,13 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-// Route::get('/', function () {
-//     return view('index');
-// });
+Route::post('login', [UserController::class, 'login']);
+Route::post('register', [UserController::class, 'register']);
 
-// Route::get('/home', function () {
-//     return view('index');
-// });
-
-
-// Route::group(['middleware' => ['cors']], function () {
-    Route::post('login', [UserController::class, 'login']);
-    Route::post('register', [UserController::class, 'register']);
-// });
-
-// Route::controller(App\Http\Controllers\UserController::class)->group(function(){
-   
-    // Route::get('cursos', [CursoController::class, 'index']);
-// });
-
+Route::get('admin_comments', [CommentController::class, 'admin_comments']);
 Route::get('comments', [CommentController::class, 'comments']);
-Route::put('update', [CommentController::class, 'update']);
+Route::post('update', [CommentController::class, 'update']);
 Route::post('store', [CommentController::class, 'store']);
+Route::delete('destroy', [CommentController::class, 'destroy']);
 
-// Route::controller(App\Http\Controllers\HomeController::class)->group(function(){
-//     Route::get('index', 'index')->name('index');
-//     Route::get('aboutgame', 'aboutgame')->name('aboutgame');
-//     Route::get('aboutus', 'aboutus')->name('aboutus');
-//     Route::get('download', 'download')->name('download');
-//     Route::get('technologies', 'technologies')->name('technologies');
-// });
-
-// Route::controller(App\Http\Controllers\CommentController::class)->group(function () {
-//     Route::get('admin_comments', 'admin_comments')->name('admin_comments'); //Sandra
-//     Route::post('admin_comments/{id}', 'find_comment')->name('admin_comments.find_comment'); //Sandra
-//     Route::delete('admin_comments/{id}', [CommentController::class, 'destroy']); //ALEX
-//     Route::put('admin_comments', 'update')->name('admin_comments.update'); //Sandra
-//     Route::post('admin_comments', 'store')->name('admin_comments.store'); // JORDI
-//     Route::get('comments', 'comments')->name('comments'); // JORDIROCHA
-//     Route::post('comments', 'store')->name('comments.store'); // JORDI
-// });
-
-
-// Route::controller(App\Http\Controllers\RankingController::class)->group(function () {
-//     Route::get('ranking', 'show')->name('ranking'); //ALEX
-// });
-
-// Auth::routes();
+Route::get('show', [RankingController::class, 'show']);

@@ -16,11 +16,14 @@ class RankingController extends Controller
         ->where('participations.position', '=', 1)
         ->groupBy('id', 'nickname', 'avatar')
         ->orderBy('victories', 'desc')
-        ->paginate(5);
+        ->get();
+        // ->paginate(5);
 
-        
+        if ($ranking){
+           return response()->json([ 'success'=> true, 'data'=>$ranking]);
+        }
 
         // return view('ranking', compact('ranking'));
-        return $ranking;
+        return   response()->json([ 'success'=> false]);
     }
 }

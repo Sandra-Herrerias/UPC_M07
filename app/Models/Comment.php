@@ -13,6 +13,7 @@ class Comment extends Model
         return $this->belongsTo('App\Models\User');
     }
     protected $fillable = [
+        'id',
         'comment',
     ];
     protected $guarded = [];
