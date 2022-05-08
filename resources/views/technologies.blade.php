@@ -116,10 +116,10 @@
         <span class="title">MySQL</span>
       </div>
       <p>MySQL es un Sistema Gestor de Bases de Datos (SGBD o DBMS en Inglés). Se trata
-                                    de una aplicación o un conjunto de aplicaciones que permite crear y manipular
-                                    bases de datos relacionales. MySQL se desarrolló a mediados de los 90 y fue uno
-                                    de las primeros gestores de bases de datos de código abierto disponibles en el
-                                    mercado.</p>
+        de una aplicación o un conjunto de aplicaciones que permite crear y manipular
+        bases de datos relacionales. MySQL se desarrolló a mediados de los 90 y fue uno
+        de las primeros gestores de bases de datos de código abierto disponibles en el
+        mercado.</p>
     </section>
   </div>
 </div>

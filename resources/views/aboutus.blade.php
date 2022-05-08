@@ -108,11 +108,12 @@
 </div>
 
 <div id="como_jugar" class="container p-5 text-white">
-<h2 class="text-center  display-4">CONOCE A LOS DESAROLLADORES DEL JUEGO</h2>
-  <p class="text-center fs-5">Somos un grupo de alumnos de segundo de Ingeniería en Sistemas de Telecomunicaciones y
-    Telemática
-    en la Universidad Politécnica de Cataluña. Para aprender sobre sistemas operativos y el uso de
-    servidores, hemos creado este juego el cual requiere conexión con el servidor de la UPC.</p>
+  <h2 class="text-center  display-4">CONOCE A LOS DESAROLLADORES DEL JUEGO</h2>
+  <p class="fs-5">Somos un grupo de alumnos de segundo de <strong>Grado Superior en Desarrollo de Aplicaciones
+      Web</strong>
+    en el Instituto Provençana.
+    En este proyecto hemos desarrollado la página web del juego Exploding Kittens desarrollado por los miembros de la
+    UPC.</p>
 </div>
 
 <div class="container">
