@@ -277,3 +277,28 @@ h1 {
 .login {
   background: #A61C28;
 }
+
+.carta-box {
+  width: 248px;
+  height: 576px;
+  position: relative;
+  perspective: 1000px;
+}
+
+.carta-box:hover .carta {
+  transform: rotateY(180deg);
+}
+
+.carta {
+  transform-style: preserve-3d;
+  transition: all 0.5s linear;
+}
+
+.cara {
+  position: absolute;
+  backface-visibility: hidden;
+}
+
+.cara.detras {
+  transform: rotateY(180deg);
+}

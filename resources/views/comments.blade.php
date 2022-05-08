@@ -8,7 +8,7 @@
 
 
 
-    <div class="container text-white mt-5">
+    <div class="container text-white mt-5 mb-4">
         <div class="rounded">
             <div class="owl-carousel owl-theme text-dark">
                 @foreach ($comments as $comment)
@@ -48,7 +48,7 @@
                         </div>
                     </div>
                     <div class="col-12 text-center mb-5">
-                        <button class="btn btn-danger mt-4" type="submit">Añadir</button>
+                        <button class="btn btn-warning mt-4" type="submit">Añadir</button>
                     </div>
                 </form>
             </div>

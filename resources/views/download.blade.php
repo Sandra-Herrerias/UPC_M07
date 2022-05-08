@@ -7,7 +7,8 @@
                 <div>
                     <h1>¡Disponible ya en PC!</h1>
                     <br>
-                    <a href="https://github.com/marioRelajao/ProyectoGrupo6/releases/tag/v1" target="_blank"><img src="img/windows.png" height="60"></a>
+                    <a href="https://github.com/marioRelajao/ProyectoGrupo6/releases/tag/v1" target="_blank">
+                        <img src="img/windows.png" height="60"></a>
                     <br>
                     <p class="margin-top-s text-muted mt-2">*Revisa los requisitios antes de descargar.</p>
                 </div>
@@ -19,7 +20,7 @@
     </div>
 </div>
 
-<div class="container text-white mt-5">
+<div class="container text-white mt-5 fs-5">
     <h2>Requisitos del sistema</h2>
 
     <p class=""><i class="bi bi-windows"></i> Windows</p>

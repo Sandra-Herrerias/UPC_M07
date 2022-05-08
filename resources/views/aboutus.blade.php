@@ -109,7 +109,7 @@
 
 <div id="como_jugar" class="container p-5 text-white">
 <h2 class="text-center  display-4">CONOCE A LOS DESAROLLADORES DEL JUEGO</h2>
-  <p class=" fs-5">Somos un grupo de alumnos de segundo de Ingeniería en Sistemas de Telecomunicaciones y
+  <p class="text-center fs-5">Somos un grupo de alumnos de segundo de Ingeniería en Sistemas de Telecomunicaciones y
     Telemática
     en la Universidad Politécnica de Cataluña. Para aprender sobre sistemas operativos y el uso de
     servidores, hemos creado este juego el cual requiere conexión con el servidor de la UPC.</p>
@@ -125,7 +125,7 @@
           </div>
           <div class="cara detras">
             <div class="card">
-              <img src="img/fotoIncognito.png" class="card-img-top" alt="...">
+              <img src="img/fotoAlex.jpg" class="card-img-top" alt="...">
               <div class="card-body">
                 <h5 class="card-title">Alexander Millones</h5>
                 <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam egestas lectus

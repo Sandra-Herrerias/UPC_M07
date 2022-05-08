@@ -34,44 +34,47 @@
   </div>
 </div>
 
-<div class="bg-danger mt-5" style="background-image: url('img/barra-game.png'); background-repeat: no-repeat; background-size: cover; background-position: center center;">
-  <div class="container text-white fs-5">
+<div
+  style="background-image: url('img/barra-game.png'); background-repeat: no-repeat; background-size: cover; background-position: center center;"
+  class="container-flex my-5">
+  <div class="container">
     <div class="row">
-
-      <div class="col-md-6">
-        <img src="img/cartas-game.png" class="img-fluid p-3">
+      <div class="col-xs-12 col-sm-6 d-flex align-items-center justify-content-center">
+        <img class="img-fluid" src="img/cartas-game.png">
       </div>
-      <div class="col-md-6 col-lg-5 ml-auto d-flex align-items-center mt-4 mt-md-0">
+      <div class="col mt-4 text-white d-flex align-items-center justify-content-center text-center">
         <div>
-          <p class="margin-top-s fs-1">
-            EN POCAS PALABRAS <br> SI EXPLOTAS, <br> PIERDES.</p>
+          <h2 class="display-2">EN POCAS PALABRAS</h2>
+          <h2 class="display-2">Si explotas</h2>
+          <h2 class="display-2">pierdes</h2>
         </div>
       </div>
-
     </div>
   </div>
 </div>
 
+
 <div class="container text-white mt-5">
-  <h2 class="text-center  display-4">Tipos de cartas</h2>
-  <div id="tipos-cartas" class="row align-items-start">
+<h2 class="display-4 text-center">Tipos de cartas</h2>
+  <div id="tipos-cartas" class="row align-items-start text-center">
     <div class="col">
-      <a class="nav-link active" >Pasar</a>
+      <a class="nav-link active">Pasar</a>
     </div>
     <div class="col">
-      <a class="nav-link active" >Ataca</a>
+      <a class="nav-link active">Ataca</a>
+      <hr class="mb-4 mt-0 d-inline-block mx-auto" style="width: 70px; background-color: #F28627; height: 2px" />
     </div>
     <div class="col">
-      <a class="nav-link active" >Blind card</a>
+      <a class="nav-link active">Blind card</a>
     </div>
     <div class="col">
-      <a class="nav-link active" >Desactiva</a>
+      <a class="nav-link active">Desactiva</a>
     </div>
     <div class="col">
       <a class="nav-link active">Exploding Kitten</a>
     </div>
     <div class="col">
-      <a class="nav-link active" >Favor</a>
+      <a class="nav-link active">Favor</a>
     </div>
     <div class="col">
       <a class="nav-link active">Ver el futuro</a>
@@ -109,23 +112,6 @@
     </div>
   </div>
 
-  <nav aria-label="Page navigation example">
-    <ul class="pagination justify-content-end">
-      <li class="page-item">
-        <a class="page-link" href="#" aria-label="Previous">
-          <span aria-hidden="true">&laquo;</span>
-        </a>
-      </li>
-      <li class="page-item"><a class="page-link" href="#">1</a></li>
-      <li class="page-item"><a class="page-link" href="#">2</a></li>
-      <li class="page-item"><a class="page-link" href="#">3</a></li>
-      <li class="page-item">
-        <a class="page-link" href="#" aria-label="Next">
-          <span aria-hidden="true">&raquo;</span>
-        </a>
-      </li>
-    </ul>
-  </nav>
 
 </div>
 

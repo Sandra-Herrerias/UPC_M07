@@ -85,8 +85,10 @@
       <div class="details">
         <span class="title">Laravel</span>
       </div>
-      <p>Lorem ipsum dolor sit ameters consectetur adipisicing elit. Sed qui veroes praesentium maiores, sint eos vero
-        sapiente voluptas debitis dicta dolore.</p>
+      <p>Laravel es un framework de código abierto para desarrollar aplicaciones y
+        servicios web con PHP 5, PHP 7 y PHP 8. Su filosofía es desarrollar código PHP de
+        forma elegante y simple, evitando el "código espagueti". Fue creado en 2011 y tiene
+        una gran influencia de frameworks como Ruby on Rails, Sinatra y ASP.NET MVC.</p>
     </section>
   </div>
   <div class="row row-2">
@@ -95,8 +97,7 @@
       <div class="details">
         <span class="title">Angular</span>
       </div>
-      <p>Lorem ipsum dolor sit ameters consectetur adipisicing elit. Sed qui veroes praesentium maiores, sint eos vero
-        sapiente voluptas debitis dicta dolore.</p>
+      <p>Angular es un framework para aplicaciones web desarrollado en TypeScript, de código abierto, mantenido por Google, que se utiliza para crear y mantener aplicaciones web de una sola página. Su objetivo es aumentar las aplicaciones basadas en navegador con capacidad de Modelo Vista Controlador (MVC), en un esfuerzo para hacer que el desarrollo y las pruebas sean más fáciles.</p>
     </section>
   </div>
   <div class="row row-1">
@@ -105,8 +106,7 @@
       <div class="details">
         <span class="title">Bootstrap</span>
       </div>
-      <p>Lorem ipsum dolor sit ameters consectetur adipisicing elit. Sed qui veroes praesentium maiores, sint eos vero
-        sapiente voluptas debitis dicta dolore.</p>
+      <p>Bootstrap es una biblioteca multiplataforma o conjunto de herramientas de código abierto para diseño de sitios y aplicaciones web. Contiene plantillas de diseño con tipografía, formularios, botones, cuadros, menús de navegación y otros elementos de diseño basado en HTML y CSS, así como extensiones de JavaScript adicionales. A diferencia de muchos frameworks web, solo se ocupa del desarrollo front-end.</p>
     </section>
   </div>
   <div class="row row-2">
@@ -115,8 +115,11 @@
       <div class="details">
         <span class="title">MySQL</span>
       </div>
-      <p>Lorem ipsum dolor sit ameters consectetur adipisicing elit. Sed qui veroes praesentium maiores, sint eos vero
-        sapiente voluptas debitis dicta dolore.</p>
+      <p>MySQL es un Sistema Gestor de Bases de Datos (SGBD o DBMS en Inglés). Se trata
+                                    de una aplicación o un conjunto de aplicaciones que permite crear y manipular
+                                    bases de datos relacionales. MySQL se desarrolló a mediados de los 90 y fue uno
+                                    de las primeros gestores de bases de datos de código abierto disponibles en el
+                                    mercado.</p>
     </section>
   </div>
 </div>
